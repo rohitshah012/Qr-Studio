@@ -3,20 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qr Code Generator By Rohit shah</title>
+    <title>QR Code Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div class="container">
-        <p>Enter Your Text or URL</p>
-        <input type="text" placeholder="Text or URL" id="qrtext">
-        <div id="imgbox">
-            <img src="" id="qrimg"/>
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="QR Studio home">
+            <span class="brand-icon">QR</span>
+            <span>QR Studio</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+            <a href="#generator">Generator</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section id="generator" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Fast, clean, scannable</p>
+                <h1>Create QR codes for links, text, and quick sharing.</h1>
+                <p class="hero-text">
+                    Generate a professional QR code in seconds. Paste your URL or message, preview it instantly, then download or open the image when you are ready.
+                </p>
+
+                <div class="trust-row" aria-label="Highlights">
+                    <span>No sign in</span>
+                    <span>Instant preview</span>
+                    <span>Mobile friendly</span>
+                </div>
+            </div>
+
+            <section class="generator-panel" aria-labelledby="generator-title">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-kicker">Generator</p>
+                        <h2 id="generator-title">Build your QR code</h2>
+                    </div>
+                    <span class="status-pill" id="statusText">Ready</span>
+                </div>
+
+                <form id="qrForm" class="qr-form" novalidate>
+                    <label for="qrtext">Text or URL</label>
+                    <div class="input-row">
+                        <input type="text" placeholder="https://example.com or any text" id="qrtext" autocomplete="off">
+                        <button type="submit">Generate</button>
+                    </div>
+                    <p class="helper-text" id="helperText">Tip: URLs, contact details, Wi-Fi notes, and plain text all work.</p>
+                </form>
+
+                <div id="imgbox" class="qr-preview" aria-live="polite">
+                    <div class="empty-state" id="emptyState">
+                        <span class="empty-icon"></span>
+                        <p>Your QR preview will appear here.</p>
+                    </div>
+                    <img src="" id="qrimg" alt="Generated QR code">
+                </div>
+
+                <div class="actions">
+                    <a id="downloadBtn" class="action-link disabled" href="#" download="qr-code.png" aria-disabled="true">Download PNG</a>
+                    <a id="openBtn" class="action-link secondary disabled" href="#" target="_blank" rel="noopener" aria-disabled="true">Open Image</a>
+                </div>
+            </section>
+        </section>
+
+        <section id="features" class="content-section">
+            <div class="section-header">
+                <p class="section-kicker">Features</p>
+                <h2>Everything a practical QR tool needs.</h2>
+            </div>
+
+            <div class="feature-grid">
+                <article>
+                    <span>01</span>
+                    <h3>Instant Generation</h3>
+                    <p>Create a QR image immediately after entering your content.</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>Clear Preview</h3>
+                    <p>Review the code before sharing so the output feels dependable.</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>Download Ready</h3>
+                    <p>Use the PNG action for posters, documents, profiles, and campaigns.</p>
+                </article>
+                <article>
+                    <span>04</span>
+                    <h3>Responsive Layout</h3>
+                    <p>The generator is easy to use across desktop, tablet, and mobile screens.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div>
+                <p class="section-kicker">About us</p>
+                <h2>Built for simple, everyday sharing.</h2>
+            </div>
+            <p>
+                QR Studio is a lightweight web application for quickly turning important information into a QR code. It is useful for portfolios, restaurant menus, event pages, business profiles, payment links, and classroom resources.
+            </p>
+        </section>
+
+        <section id="faq" class="content-section faq-section">
+            <div class="section-header">
+                <p class="section-kicker">FAQ</p>
+                <h2>Common questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <details>
+                    <summary>What can I put inside a QR code?</summary>
+                    <p>You can add website URLs, plain text, email addresses, phone numbers, short instructions, and many other text-based values.</p>
+                </details>
+                <details>
+                    <summary>Why should I test the QR before publishing?</summary>
+                    <p>Testing confirms that the code scans correctly, opens the expected content, and is large enough for the place where you plan to use it.</p>
+                </details>
+                <details>
+                    <summary>Does this store my QR content?</summary>
+                    <p>This page does not save your input locally. The QR image is generated through an external image API based on the text you enter.</p>
+                </details>
+                <details>
+                    <summary>Can I use it on mobile?</summary>
+                    <p>Yes. The interface adapts for smaller screens with stacked content, larger touch targets, and readable spacing.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <a class="brand footer-brand" href="#home" aria-label="QR Studio home">
+                <span class="brand-icon">QR</span>
+                <span>QR Studio</span>
+            </a>
+            <p>Create QR codes quickly for personal, business, and learning use.</p>
         </div>
-        <button onclick="GenerateQR()">Generate QR</button>
-    </div>
+
+        <div class="footer-links">
+            <a href="#generator">Generator</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#faq">FAQ</a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
-    </body>
+</body>
 </html>
